@@ -515,7 +515,9 @@
     z-index: 1;
     max-width: 60rem;
 
-    @include mixin.laptop { max-width: 107.3rem; }
+    @include mixin.laptop { max-width: 80rem; }
+    @include mixin.wide-laptop { max-width: 90rem; }
+    @include mixin.wide-screen { max-width: 107.3rem; }
   }
 
   &__title {
@@ -698,7 +700,7 @@
 
     @include mixin.tablet { font-size: 1.7rem; height: 3.2rem; }
     @include mixin.small-laptop { font-size: 1.8rem; height: 3.6rem; }
-    @include mixin.wide-laptop { font-size: 1.9rem; margin-bottom: 1.5rem; height: 4rem; white-space: wrap; }
+    @include mixin.wide-laptop { font-size: 1.9rem; margin-bottom: 1.5rem; height: 5rem; white-space: wrap; }
     @include mixin.wide-screen { font-size: 2rem; height: 4.7rem; max-width: 25.5rem; }
   }
 
@@ -726,12 +728,39 @@
   @include mixin.wide-laptop { padding-top: 8rem; padding-bottom: 8rem; }
 }
 
+.logos-wrap {
+  display: flex;
+  align-items: stretch;
+}
+
 .logos {
+  min-width: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
+  animation: rollList 15s linear infinite;
 
   @include mixin.small-laptop { justify-content: space-between; }
+
+  a {
+    display: block;
+
+    img {
+      width: 100%;
+      min-width: 10rem;
+    }
+  }
+}
+
+@keyframes rollList {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }

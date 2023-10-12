@@ -1,8 +1,20 @@
-import { swiperInit, getWindowSize } from './helper'
+import { swiperInit, adaptiveSwiper } from './helper'
+
+const productsSwiperOpt = {
+  'small': {
+    perView: 1,
+  },
+  'medium': {
+    perView: 2,
+  },
+  'large': {
+    perView: 4,
+  }
+}
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
-  const windowSize = getWindowSize()
-
   swiperInit({
     className: '.home-swiper',
     nextBtnClass: '.home-swiper__btn-next',
@@ -10,23 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 1,
   })
 
-  const productsSwiperOpt = {
-    'small': {
-      perView: 1,
-    },
-    'medium': {
-      perView: 2,
-    },
-    'large': {
-      perView: 4,
-    }
-  }
-
-  swiperInit({
+  adaptiveSwiper({
     className: '.products-swiper',
     nextBtnClass: '.products-swiper__btn-next',
     prevBtnClass: '.products-swiper__btn-prev',
-    perView: productsSwiperOpt[windowSize]?.perView || 2,
     spaceBetween: 20,
-  })
+  }, productsSwiperOpt)
 });

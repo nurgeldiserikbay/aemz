@@ -26,3 +26,24 @@ export function getWindowSize() {
   else if (width < 1025) return 'medium'
   else return 'large'
 }
+
+export function adaptiveSwiper(opt, sizes) {
+  let initedSize;
+
+  const init = () => {
+    const windowSize = getWindowSize()
+
+    if (windowSize === initedSize) return
+
+    initedSize = windowSize
+
+    swiperInit({
+      ...opt,
+      perView: sizes[initedSize]?.perView || opt.perView || 2,
+    })
+  }
+  
+  init()
+
+  window.addEventListener('resize', init)
+}
