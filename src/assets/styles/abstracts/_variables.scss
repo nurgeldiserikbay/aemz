@@ -1,0 +1,40 @@
+$banner-overlay: #151515;
+$white-overlay: #F9FAFA;
+
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-dark: #222732;
+$color-primary: #D20022;
+$color-grey: #B4B4B4;
+
+$line-dark: #0D0D0D;
+$line-white: #FFFFFF;
+
+$text-color-white: #FFFFFF;
+$text-color-black: #000000;
+$text-color-dark: #070C1D;
+$text-color-darker: #0F1721;
+$text-color-grey: #ACACAC;
+
+$font-family: 'TTNormsPro', sans-serif;
+$font-family2: 'Montserrat', sans-serif;
+
+$scrollbar-color: #DBDBDB;
+
+$xs: 380px; // sm-phone
+$sm: 560px; // phone
+$smd: 780px; // small-tablet
+$md: 1000px; // tablet
+$slg: 1025px; // wide-tablet
+$lg: 1275px; // small-laptop
+$xlg: 1370px; // laptop
+$xxlg: 1445px; // wide-laptop
+$xxxlg: 1680px; // wide-screen
+
+// @include mixin.small-tablet {  }
+// @include mixin.tablet {  }
+// @include mixin.wide-tablet {  }
+// @include mixin.small-laptop {  }
+// @include mixin.laptop {  }
+// @include mixin.wide-laptop {  }
+// @include mixin.wide-screen {  }

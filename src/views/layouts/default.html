@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>{{ title }}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- load source favicon via Webpack alias '@images' -->
+  <link href="/favicon.svg" rel="icon" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/css/bootstrap-grid.min.css">
+  <!-- load global source script via Webpack alias '@scripts' -->
+  <script src="@scripts/common.js" defer="defer"></script>
+
+  <!-- block for specific page styles -->
+  {% block styles %}{% endblock %}
+</head>
+
+<body>
+  <!-- Header -->
+  <header id="header" class="header white-type static">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-8 col-md-5 col-lg-3">
+          <a href="/" class="header__logo">
+            <img src="@images/home/logotype.png" alt="" class="header__logo-img">
+          </a>
+        </div>
+        <div class="col-4 col-md-7 col-xl-6">
+          <nav class="header__nav navigation">
+            <button class="navigation__control">
+              <span></span><span></span><span></span>
+            </button>
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a href="/" class="navigation__link">О заводе</a>
+              </li>
+              <li class="navigation__item">
+                <a href="/" class="navigation__link">Каталог</a>
+              </li>
+              <li class="navigation__item">
+                <a href="/" class="navigation__link">Услуги</a>
+              </li>
+              <li class="navigation__item">
+                <a href="/" class="navigation__link">Информация</a>
+              </li>
+              <li class="navigation__item">
+                <a href="/" class="navigation__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-12 col-lg-3">
+          <div class="header__controls">
+            <div class="header__search search">
+              <input id="search" type="text" class="search__input">
+              <label for="search" class="btn search__btn"><img src="@images/icons/search.svg" alt=""></label>
+            </div>
+            <div class="header__contacts contacts">
+              <a href="tel:+77710051904">+77710051904</a>
+              <a href="mailto:aemz@alageum.com">aemz@alageum.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="navigation-mobile">
+        <ul class="navigation-mobile__list">
+          <li class="navigation-mobile__item">
+            <a href="/" class="navigation-mobile__link">О заводе</a>
+          </li>
+          <li class="navigation-mobile__item">
+            <a href="/" class="navigation-mobile__link">Каталог</a>
+          </li>
+          <li class="navigation-mobile__item">
+            <a href="/" class="navigation-mobile__link">Услуги</a>
+          </li>
+          <li class="navigation-mobile__item">
+            <a href="/" class="navigation-mobile__link">Информация</a>
+          </li>
+          <li class="navigation-mobile__item">
+            <a href="/" class="navigation-mobile__link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="main-container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col-12 col-lg-9">
+            <nav class="footer__nav f-navigation">
+              <ul class="f-navigation__list">
+                <li class="f-navigation__item">
+                  <a href="" class="f-navigation__link">Каталог</a>
+                </li>
+                <li class="f-navigation__item">
+                  <a href="" class="f-navigation__link">Проекты</a>
+                </li>
+                <li class="f-navigation__item">
+                  <a href="" class="f-navigation__link">Услуги</a>
+                </li>
+                <li class="f-navigation__item">
+                  <a href="" class="f-navigation__link">Новости</a>
+                </li>
+                <li class="f-navigation__item">
+                  <a href="" class="f-navigation__link">Вопросы и ответы</a>
+                </li>
+                <li class="f-navigation__item">
+                  <a href="" class="f-navigation__link">Вакансии</a>
+                </li>
+                <li class="f-navigation__item">
+                  <a href="" class="f-navigation__link">Компания</a>
+                </li>
+                <li class="f-navigation__item">
+                  <a href="" class="f-navigation__link">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-12 col-lg-3">
+            <div class="footer__socials socials">
+              <ul class="socials__list">
+                <li class="socials__item">
+                  <a href="" class="socials__link">
+                    <img src="@images/icons/facebook.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-5 col-lg-4">
+            <p class="footer__copyright copyright">© 2023 Все права защищены.</p>
+          </div>
+          <div class="col-12 col-md-7 col-lg-8">
+            <div class="footer__contacts f-contacts">
+              <ul class="f-contacts__links">
+                <li class="f-contacts__item">
+                  <img src="@images/icons/phone.svg" alt="" class="f-contacts__icon">
+                  <p class="f-contacts__value">
+                    <a href="tel:+77710052229" class="f-contacts__link">+7 (771) 005-22-29</a>
+                    <a href="tel:+77710051904" class="f-contacts__link">+7 (771) 005-19-04</a>
+                  </p>
+                </li>
+                <li class="f-contacts__item">
+                  <img src="@images/icons/mail.svg" alt="" class="f-contacts__icon">
+                  <p class="f-contacts__value">
+                    <a href="mailto:aemz@alageum.com" class="f-contacts__link">aemz@alageum.com</a>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- block for specific page scripts -->
+  {% block scripts %}{% endblock %}
+</body>
+
+</html>

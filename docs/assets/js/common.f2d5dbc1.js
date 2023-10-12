@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",(()=>{!function(){const t=document.body.querySelector(".navigation__control"),e=document.body.querySelector(".navigation-mobile");let o=!1;t?.addEventListener("click",(()=>{e.classList.toggle("navigation-mobile--active"),o=!o})),document.body.addEventListener("click",(t=>{t.target.closest(".navigation-mobile")||t.target.closest(".navigation__control")||!o||(e.classList.remove("navigation-mobile--active"),o=!1)}))}()}));
+//# sourceMappingURL=common.f2d5dbc1.js.map

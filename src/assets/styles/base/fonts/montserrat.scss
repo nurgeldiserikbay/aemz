@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: local(Montserrat Medium),
+    url('@fonts/Montserrat/Montserrat-Medium.woff2') format('woff2');
+  font-weight: 500;
+}
+
+// module export
+$font-family: 'Montserrat', sans-serif;

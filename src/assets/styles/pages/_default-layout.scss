@@ -1,0 +1,313 @@
+@use '../abstracts/variables' as var;
+@use '../base/mixins' as mixin;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @include mixin.tablet { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  @include mixin.small-laptop { padding-top: 4.2rem; padding-bottom: 4.2rem; }
+  @include mixin.wide-laptop { padding-top: 5rem; padding-bottom: 5rem; }
+
+  &__logo {
+    display: inline-block;
+    width: 100%;
+    max-width: 292.34px;
+  }
+
+  &__logo-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    display: none;
+
+    @include mixin.wide-laptop { display: flex; }
+  }
+}
+
+.navigation {
+  display: flex; justify-content: flex-end;
+
+  @include mixin.tablet { justify-content: flex-start; }
+
+  &__control {
+    background: rgba(var.$color-black, 0.5);
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+
+    @include mixin.tablet { display: none; }
+
+    span {
+      display: block;
+      width: 2.4rem;
+      height: 0.2rem;
+      border: 0.5rem;
+      background: var.$color-white;
+    }
+  }
+
+  &__list {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    max-width: 63.4rem;
+
+    @include mixin.tablet { display: flex; }
+  }
+
+  &__link {
+    font-family: var.$font-family;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var.$text-color-white;
+
+    @include mixin.tablet { font-size: 1.8rem; }
+    @include mixin.small-laptop { font-size: 2rem; }
+    @include mixin.wide-laptop { font-size: 2.2rem; }
+
+    &:active {
+      color: var.$text-color-white;
+    }
+
+    &:visited {
+      color: var.$text-color-white;
+    }
+  }
+}
+
+.navigation-mobile {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: block;
+  background: rgba(var.$color-black, 0.8);
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s linear;
+
+  &--active {
+    max-height: 800px;
+  }
+
+  @include mixin.tablet { display: none; }
+
+  &__link {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    color: var.$text-color-white;
+    transition: 0.3s linear;
+
+    &:hover,
+    &:active {
+      color: var.$color-primary;
+    }
+  }
+}
+
+.search {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+
+  &__input {
+    position: absolute;
+    box-sizing: border-box;
+    width: 0;
+    padding: 0;
+    border: none;
+    top: 0;
+    right: 2.6rem;
+    transition: 0.3s linear;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    padding: 0.8rem 0;
+    border-radius: 0.5rem;
+    transform: translateY(-25%);
+
+    &:focus {
+      width: 200px;
+      padding: 0.8rem 1.2rem;
+    }
+  }
+
+  &__btn {
+    width: 1.8rem;
+    height: 1.8rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  margin-left: 5.8rem;
+
+  a {
+    font-family: var.$font-family2;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var.$text-color-white;
+    text-align: center;
+
+    &:visited {
+      color: var.$text-color-white;
+    }
+
+    &:hover {
+      color: var.$text-color-white;
+    }
+  }
+}
+
+.footer {
+  background: var.$color-dark;
+  padding-top: 6rem;
+  padding-bottom: 3.8rem;
+
+  &__top {
+    margin-bottom: 3.3rem;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__bottom {
+    .row {
+      flex-direction: column-reverse;
+      align-items: center;
+
+      @include mixin.small-tablet { flex-direction: row; }
+    }
+  }
+}
+
+.f-navigation {
+  margin-bottom: 3rem;
+
+  @include mixin.wide-tablet { margin-bottom: 0rem; }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  &__link {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: var.$text-color-white;
+
+    @include mixin.laptop { font-size: 1.5rem; }
+
+    &:hover,
+    &:active {
+      color: var.$color-primary;
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+
+  @include mixin.tablet { justify-content: flex-end; }
+
+  svg {
+    width: 3rem;
+    height: 3rem;
+
+    @include mixin.laptop {
+      width: 4.1rem;
+      height: 4.1rem;
+    }
+  }
+
+  path {
+    fill: var.$color-dark;
+  }
+}
+
+.copyright {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var.$text-color-white;
+  opacity: 0.5;
+  margin-top: 4.5rem;
+  text-align: center;
+
+  @include mixin.small-tablet { text-align: left; }
+  @include mixin.tablet { font-size: 1.3rem; }
+  @include mixin.small-laptop { font-size: 1.4rem; }
+  @include mixin.wide-laptop { font-size: 1.5rem; }
+}
+
+.f-contacts {
+  display: flex;
+  justify-content: center;
+  order: 1;
+
+  @include mixin.small-tablet { justify-content: flex-end; }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var.$text-color-white;
+    display: block;
+
+    @include mixin.tablet { font-size: 1.3rem; }
+    @include mixin.small-laptop { font-size: 1.4rem; }
+    @include mixin.wide-laptop { font-size: 1.5rem; }
+
+    &:visited {
+      color: var.$text-color-white;
+    }
+  }
+}

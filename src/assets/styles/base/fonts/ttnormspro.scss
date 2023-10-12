@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'TTNormsPro';
+  src: local(TTNormsPro Regular),
+    url('@fonts/TTNormsPro/TTNormsPro-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'TTNormsPro';
+  src: local(TTNormsPro Medium),
+    url('@fonts/TTNormsPro/TTNormsPro-Medium.woff2') format('woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'TTNormsPro';
+  src: local(TTNormsPro Bold),
+    url('@fonts/TTNormsPro/TTNormsPro-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+
+// module export
+$font-family: TTNormsPro, sans-serif;

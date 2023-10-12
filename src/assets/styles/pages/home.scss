@@ -1,0 +1,737 @@
+@use '@styles/main.scss';
+@use '@styles/abstracts/_variables.scss' as var;
+@use '@styles/base/mixins' as mixin;
+
+#banner {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.home-swiper {
+  position: relative;
+  width: 100%;
+
+  &__control {
+    width: 100%;
+    position: absolute;
+    bottom: 2rem;
+
+    @include mixin.phone { bottom: 2.7rem; }
+    @include mixin.small-tablet { bottom: 5.3rem; }
+    @include mixin.tablet { bottom: 7.8rem; }
+    @include mixin.wide-tablet { bottom: 10.3rem; }
+    @include mixin.small-laptop { bottom: 12.8rem; }
+    @include mixin.laptop { bottom: 15.3rem; }
+    @include mixin.wide-laptop { bottom: 17.8rem; }
+    @include mixin.wide-screen { bottom: 20.3rem; }
+
+    .container {
+      display: flex;
+      justify-content: flex-end;
+
+      .btn {
+        position: relative;
+        z-index: 20;
+      }
+    }
+  }
+
+  &__btn-prev {
+    margin-right: 1.5rem;
+    transform-origin: center;
+    transform: rotateZ(-180deg);
+
+    @include mixin.small-tablet { margin-right: 1.5rem; }
+    @include mixin.wide-tablet { margin-right: 2.4rem; }
+    @include mixin.laptop { margin-right: 2.85rem; }
+    @include mixin.wide-screen { margin-right: 3.3rem; }
+
+    path {
+      stroke: var.$color-black;
+    }
+  }
+}
+
+#advantage {
+  margin-top: 0;
+  margin-bottom: 3rem;
+
+  @include mixin.small-tablet { margin-top: -3rem; margin-bottom: 5rem; }
+  @include mixin.wide-tablet { margin-top: -6rem; margin-bottom: 6rem; }
+  @include mixin.laptop { margin-top: -9rem; margin-bottom: 7rem; }
+  @include mixin.wide-screen { margin-top: -12.5rem; margin-bottom: 8rem; }
+}
+
+.advantages {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1.8rem 3rem 2.2rem 3rem;
+  background: var.$white-overlay;
+  box-shadow: 0 4px 36px 0 rgba(var.$color-black, 0.25);
+
+  @include mixin.small-tablet { padding: 2.3rem 6rem 3rem 6rem; }
+  @include mixin.wide-tablet { padding: 2.8rem 10rem 3.8rem 8.5rem; }
+  @include mixin.laptop { padding: 3.3rem 14rem 4.6rem 11rem; }
+  @include mixin.wide-screen { padding: 3.8rem 17.3rem 5.5rem 13.7rem; }
+
+  &__inner {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 1px;
+    background: var.$color-grey;
+  }
+
+  &__item {
+    flex-grow: 1;
+    flex-shrink: 1;
+    background: var.$white-overlay;
+    padding: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    @include mixin.small-tablet { padding-top: 1.15rem; width: 48%; }
+    @include mixin.wide-tablet { padding-top: 1.3rem; }
+    @include mixin.laptop { padding-top: 1.5rem; width: 24%; }
+    @include mixin.wide-screen { padding-top: 1.7rem; padding-bottom: 0; }
+  }
+
+  &__item:nth-child(1) {
+    @include mixin.wide-screen { max-width: 32.5rem; }
+  }
+
+  &__item:nth-child(3) &__text {
+    @include mixin.wide-screen { max-width: 20.9rem; }
+  }
+
+  &__img {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+
+    @include mixin.small-tablet { margin-bottom: 1.13rem; height: 3.5rem; }
+    @include mixin.wide-tablet { margin-bottom: 1.32rem; height: 4.1rem; }
+    @include mixin.laptop { margin-bottom: 1.51rem; height: 4.8rem; }
+    @include mixin.wide-screen { margin-bottom: 1.7rem; height: 5.5rem; }
+
+    img,
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__text {
+    max-width: 27.7rem;
+    text-align: center;
+    font-family: var.$font-family2;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var.$text-color-black;
+
+    @include mixin.wide-tablet { font-size: 1.7rem; }
+    @include mixin.wide-screen { font-size: 1.8rem; }
+  }
+}
+
+#services {
+  margin-bottom: 3rem;
+
+  @include mixin.small-tablet { margin-bottom: 5rem; }
+  @include mixin.wide-tablet { margin-bottom: 6rem; }
+  @include mixin.laptop { margin-bottom: 7rem; }
+  @include mixin.wide-screen { margin-bottom: 8rem; }
+}
+
+.services {
+  &__title {
+    margin-bottom: 2rem;
+
+    @include mixin.small-tablet { margin-bottom: 2.5rem; }
+    @include mixin.wide-tablet { margin-bottom: 3rem; }
+    @include mixin.laptop { margin-bottom: 3.5rem; }
+    @include mixin.wide-screen { margin-bottom: 3.9rem; }
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    max-width: 123rem;
+
+    @include mixin.small-tablet { font-size: 2.15rem; margin-bottom: 2.5rem; }
+    @include mixin.wide-tablet { font-size: 2.5rem; margin-bottom: 3rem; }
+    @include mixin.laptop { font-size: 2.85rem; margin-bottom: 3.5rem; }
+    @include mixin.wide-screen { font-size: 3.2rem; margin-bottom: 3.9rem; }
+  }
+}
+
+.service-list {
+  margin-bottom: 2.8rem;
+
+  @include mixin.small-tablet { margin-bottom: 3.5rem; }
+  @include mixin.wide-tablet { margin-bottom: 5rem; }
+  @include mixin.laptop { margin-bottom: 6.5rem; }
+  @include mixin.wide-screen { margin-bottom: 8rem; }
+}
+
+.service {
+  position: relative;
+  width: 100%;
+  height: 19rem;
+  box-sizing: border-box;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 8px 9px 35px 0px rgba(var.$color-black, 0.25);
+  margin-bottom: 1.5rem;
+
+  @include mixin.small-tablet { height: 21rem; padding: 4.6rem; }
+  @include mixin.tablet { height: 23rem; padding: 5.6rem; }
+  @include mixin.wide-tablet { height: 25rem; padding: 6.6rem; }
+  @include mixin.small-laptop { height: 27rem; padding: 7.6rem; margin-bottom: 0rem; }
+  @include mixin.laptop { height: 29rem; padding: 8.6rem; }
+  @include mixin.wide-laptop { height: 31rem; padding: 9.6rem; }
+  @include mixin.wide-screen { height: 33rem; padding: 10.6rem; }
+
+  &__img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var.$text-color-white;
+
+    @include mixin.small-tablet { font-size: 2.2rem; }
+    @include mixin.tablet { font-size: 2.5rem; }
+    @include mixin.wide-tablet { font-size: 2.8rem; }
+    @include mixin.small-laptop { font-size: 3.1rem; }
+    @include mixin.laptop { font-size: 3.4rem; }
+    @include mixin.wide-laptop { font-size: 3.7rem; }
+    @include mixin.wide-screen { font-size: 4rem; }
+  }
+}
+
+.devices {
+  margin-bottom: 2rem;
+
+  @include mixin.small-tablet { margin-bottom: 2.45rem; }
+  @include mixin.wide-tablet { margin-bottom: 2.9rem; }
+  @include mixin.laptop { margin-bottom: 3.35rem; }
+  @include mixin.wide-screen { margin-bottom: 3.8rem; }
+
+  &>div {
+    margin-bottom: 1rem;
+    
+    @include mixin.laptop { margin-bottom: 2rem; }
+  }
+}
+
+.device {
+  position: relative;
+  box-shadow: -7px -5px 89px 0 rgba(var.$color-black, 0.08);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 1.4rem 1.8rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mixin.wide-tablet { padding: 2rem 2.4rem 4rem 2rem; }
+
+  &__bg-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  &__title {
+    min-height: 4.6rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var.$text-color-dark;
+    margin-bottom: 0.8rem;
+
+    @include mixin.tablet { font-size: 2rem; min-height: 5rem; }
+    @include mixin.small-laptop { font-size: 2.2rem; min-height: 5.4rem; }
+    @include mixin.wide-laptop { font-size: 2.4rem; min-height: 5.8rem; }
+  }
+
+  &--bg &__title {
+    color: var.$text-color-white;
+  }
+
+  &__img {
+    position: relative;
+    width: 14rem;
+    height: 14rem;
+    align-self: center;
+    margin-bottom: 2.958rem;
+
+    @include mixin.tablet { width: 18rem; height: 18rem; }
+    @include mixin.small-laptop { width: 22rem; height: 22rem; }
+    @include mixin.wide-laptop { width: 26.642rem; height: 26.642rem; }
+  }
+
+  &__img-wrap {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var.$text-color-grey;
+
+    @include mixin.tablet { line-height: 1.3; }
+    @include mixin.small-laptop { line-height: 1.4; }
+    @include mixin.wide-laptop { line-height: 1.5; }
+  }
+
+  &--bg &__text {
+    color: var.$text-color-white;
+  }
+
+  &__link {
+    position: absolute;
+    top: 1.7rem;
+    right: 2rem;
+    background: var.$color-dark;
+
+    @include mixin.tablet { top: 2.3rem; right: 2.9rem; }
+    @include mixin.small-laptop { top: 2.9rem; right: 3.8rem; }
+    @include mixin.wide-laptop { top: 3.4rem; right: 4.642rem; }
+
+    &:hover {
+      background: var.$color-primary;
+    }
+  }
+}
+
+#products {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background: var.$color-primary;
+
+  @include mixin.wide-tablet { padding-top: 3rem; padding-bottom: 3rem; }
+  @include mixin.laptop { padding-top: 3.5rem; padding-bottom: 3.6rem; }
+  @include mixin.wide-screen { padding-top: 3.9rem; padding-bottom: 3.9rem; }
+}
+
+.products {
+  &__title {
+    margin-bottom: 2.8rem;
+
+    @include mixin.wide-tablet { margin-bottom: 3.75rem; }
+    @include mixin.laptop { margin-bottom: 4.7rem; }
+    @include mixin.wide-screen { margin-bottom: 5.6rem; }
+  }
+
+  &__more {
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 1rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var.$text-color-white;
+    
+    @include mixin.wide-tablet { font-size: 1.6rem; gap: 1.15rem; }
+    @include mixin.laptop { font-size: 1.8rem; gap: 1.3rem; }
+    @include mixin.wide-screen { font-size: 2rem; gap: 1.5rem; }
+  }
+}
+
+.products-swiper {
+  position: relative;
+  height: 28.9rem;
+
+  .swiper-slide {
+    height: 100%;
+  }
+
+  &__control {
+    .btn {
+      position: absolute;
+      top: 50%;
+      background: var.$color-dark;
+      box-shadow: 0 4px 16px 0 rgba(var.$color-black, 0.25);
+      z-index: 10;
+      cursor: pointer;
+
+      &:hover {
+        background: var.$color-white;
+      }
+
+      path {
+        stroke: var.$color-white;
+      }
+
+      &:hover path {
+        stroke: var.$color-black;
+      }
+    }
+  }
+
+  &__btn-prev {
+    left: 0;
+    transform: translate(-50%, -50%) rotateZ(180deg);
+  }
+
+  &__btn-next {
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+}
+
+.product {
+  position: relative;
+  box-shadow: 8px 8px 47px 0 rgba(var.$color-black, 0.17);
+  background: var.$color-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem 2rem 1rem 2.4rem;
+  box-sizing: border-box;
+  height: 100%;
+
+  @include mixin.tablet { padding: 1.5rem 3.1rem 1.2rem 3.7rem; }
+  @include mixin.laptop { padding: 1.9rem 4.1rem 1.35rem 5rem; }
+  @include mixin.wide-screen { padding: 2.3rem 5.1rem 1.5rem 6.3rem; }
+
+  &__btn {
+    position: absolute;
+    right: 1.3rem;
+    top: -1.65rem;
+    z-index: 1;
+    background: var.$color-dark;
+  }
+
+  &__img {
+    height: 13rem;
+    align-self: center;
+
+    @include mixin.laptop { height: 15rem; }
+    @include mixin.wide-screen { height: 16rem; }
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  &__title {
+    flex-grow: 1;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var.$text-color-black;
+  }
+
+  &__subtitle {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var.$text-color-grey;
+
+    @include mixin.tablet { font-size: 1.45rem; line-height: 1.3; }
+    @include mixin.laptop { font-size: 1.5rem; line-height: 1.4; }
+    @include mixin.wide-screen { font-size: 1.6rem; line-height: 1.5; }
+  }
+}
+
+#consulting {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  @include mixin.tablet { padding-top: 5rem; padding-bottom: 5rem; }
+  @include mixin.laptop { padding-top: 6rem; padding-bottom: 6rem; }
+  @include mixin.wide-screen { padding-top: 8rem; padding-bottom: 8rem; }
+}
+
+.consulting {
+  position: relative;
+  padding: 2rem 3rem 2rem 3rem;
+  background: url('@images/home/consulting-banner.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+
+  @include mixin.tablet { padding: 3rem 3.5rem 3rem 4.1rem; gap: 3.2rem; }
+  @include mixin.laptop { padding: 4rem 5.2rem 4rem 5.25rem; gap: 4.1rem; }
+  @include mixin.wide-screen { padding: 5.1rem 7.4rem 5.3rem 6.5rem; gap: 5rem; }
+
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: rgba(var.$color-black, 0.65);
+  // }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 60rem;
+
+    @include mixin.laptop { max-width: 107.3rem; }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var.$text-color-white;
+    margin-bottom: 1.4rem;
+
+    @include mixin.tablet { font-size: 2.7rem; margin-bottom: 2.8rem; }
+    @include mixin.laptop { font-size: 3.3rem; margin-bottom: 2.2rem; }
+    @include mixin.wide-screen { font-size: 4rem; margin-bottom: 2.5rem; }
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var.$text-color-white;
+
+    @include mixin.tablet { font-size: 2.1rem; }
+    @include mixin.laptop { font-size: 2.6rem; }
+    @include mixin.wide-screen { font-size: 3.2rem; }
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 1;
+    padding: 1rem 1.8rem;
+    
+    @include mixin.tablet { padding: 1.2rem 2.4rem; }
+    @include mixin.laptop { padding: 1.35rem 3.1rem; }
+    @include mixin.wide-screen { padding: 1.5rem 3.9rem; }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: -12px;
+      right: -10px;
+      bottom: -12px;
+      border: 2px solid var.$color-primary;
+      opacity: 0.57;
+    }
+  }
+}
+
+.about-company {
+  max-width: 89.4rem;
+  margin-bottom: 3rem;
+
+  @include mixin.wide-laptop { margin-bottom: 0; }
+
+  &__title {
+    margin-bottom: 1.5rem;
+
+    @include mixin.tablet { margin-bottom: 2rem; }
+    @include mixin.small-laptop { margin-bottom: 2.5rem; }
+    @include mixin.wide-laptop { margin-bottom: 3rem; }
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var.$text-color-black;
+
+    @include mixin.tablet { font-size: 1.7rem; line-height: 1.35; }
+    @include mixin.small-laptop { font-size: 1.8rem; line-height: 1.5; }
+    @include mixin.wide-laptop { font-size: 1.8rem; line-height: 1.66; }
+
+    p:nth-child(2) {
+      margin-top: 1.5rem;
+
+      @include mixin.tablet { margin-top: 2.1rem; }
+      @include mixin.small-laptop { margin-top: 2.8rem; }
+      @include mixin.wide-laptop { margin-top: 3.5rem; }
+    }
+
+    ul {
+      margin-bottom: 3.5rem;
+
+      @include mixin.tablet { margin-bottom: 2.1rem; }
+      @include mixin.small-laptop { margin-bottom: 2.8rem; }
+      @include mixin.wide-laptop { margin-bottom: 3.5rem; }
+    }
+
+    li {
+      font-family: var.$font-family2;
+      font-size: 1.4rem;
+      line-height: 1.2;
+
+      @include mixin.tablet { line-height: 1.35; }
+      @include mixin.small-laptop { font-size: 1.6rem; line-height: 1.5; }
+      @include mixin.wide-laptop { line-height: 1.66; }
+    }
+  }
+}
+
+.news-list {
+  padding-left: 1.8rem;
+  width: 100%;
+  box-sizing: border-box;
+  direction: rtl;
+  // overflow-y: scroll;
+  // overflow-x: visible;
+
+  @include mixin.tablet { padding-left: 2.2rem; }
+  @include mixin.small-laptop { padding-left: 2.6rem; }
+  @include mixin.wide-laptop { padding-left: 2.9rem; }
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: rgba(var.$scrollbar-color, 0.2);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var.$color-primary;
+  }
+}
+
+.news {
+  padding: 1.8rem 2.5rem 1.5rem 1rem;
+  box-shadow: 0 0 40px 0 rgba(var.$color-black, 0.07);
+  display: flex;
+  align-items: center;
+  transition: 0.3s linear;
+  background: transparent;
+  gap: 3rem;
+  margin-bottom: 2.3rem;
+  direction: ltr;
+
+  @include mixin.tablet { gap: 4rem; }
+  @include mixin.small-laptop { gap: 5rem; }
+  @include mixin.wide-laptop { padding: 2.4rem 3.5rem 2.3rem 1.6rem; gap: 6rem; }
+  @include mixin.wide-screen { gap: 6.5rem; }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    background: var.$text-color-white;
+  }
+
+  &__content {
+    flex-grow: 1;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 13rem;
+    height: 8rem;
+    min-width: 13rem;
+
+    @include mixin.tablet { min-width: 14rem; width: 14rem; height: 9rem; }
+    @include mixin.small-laptop { min-width: 15rem; width: 15rem; height: 10rem; }
+    @include mixin.wide-laptop { min-width: 16rem; width: 16rem; height: 10.6rem; }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var.$text-color-darker;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 2.8rem;
+    margin-bottom: 1rem;
+
+    @include mixin.tablet { font-size: 1.7rem; height: 3.2rem; }
+    @include mixin.small-laptop { font-size: 1.8rem; height: 3.6rem; }
+    @include mixin.wide-laptop { font-size: 1.9rem; margin-bottom: 1.5rem; height: 4rem; white-space: wrap; }
+    @include mixin.wide-screen { font-size: 2rem; height: 4.7rem; max-width: 25.5rem; }
+  }
+
+  &__more {
+    padding: 0;
+    gap: 1rem;
+    color: var.$color-primary;
+    font-size: 1.6rem;
+    font-weight: 400;
+    
+    @include mixin.small-laptop { gap: 1.3rem; }
+
+    path {
+      stroke: var.$color-primary;
+    }
+  }
+}
+
+#logos {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  @include mixin.tablet { padding-top: 5rem; padding-bottom: 5rem; }
+  @include mixin.small-laptop { padding-top: 6rem; padding-bottom: 6rem; }
+  @include mixin.wide-laptop { padding-top: 8rem; padding-bottom: 8rem; }
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  @include mixin.small-laptop { justify-content: space-between; }
+}

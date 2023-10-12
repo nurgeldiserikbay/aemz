@@ -1,0 +1,45 @@
+variables:
+  GIT_STRATEGY: none
+  SRV: "89.219.32.148"
+  PORT: "22022"
+  PRODPATH: "med-tourism.crocos.kz"
+  DEVPATH: "alemagro.crocos.kz"
+  DEVBRANCH: "devel1op"
+  PRODBRANCH: "main"
+  
+  ARTISAN: "migrate"
+
+.sshcon:
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo -n "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+
+stages:
+  - deploy-dev
+  - deploy-prod
+
+deploy-dev:
+  stage: deploy-dev
+  extends: .sshcon
+  needs: []
+  tags:
+    - shell
+  rules:
+    - if: $CI_COMMIT_BRANCH == $DEVBRANCH
+  script:
+    - ssh -p$PORT -tt crocos@$SRV "source bbashrc && cd /home/crocos/http/www/$DEVPATH && git reset --hard HEAD && git pull origin $DEVBRANCH && npm install && npm run build"
+
+deploy-prod:
+  stage: deploy-prod
+  extends: .sshcon
+  needs: []
+  tags:
+    - shell
+  rules:
+    - if: $CI_COMMIT_BRANCH == $PRODBRANCH
+  script:
+    - ssh -p$PORT -tt crocos@$SRV "source bbashrc && cd /home/crocos/http/www/$PRODPATH && git reset --hard HEAD && git pull origin $PRODBRANCH && npm install && npm run build"

@@ -1,0 +1,6 @@
+.DS_Store
+.idea
+_ignored
+/dist
+node_modules
+docs.zip

@@ -1,0 +1,498 @@
+{% extends "src/views/layouts/default.html" %}
+
+<!-- set variables used in layout -->
+{% set title="aemz" %}
+
+{% block styles %}
+<!-- load specific page style -->
+<link href="@styles/pages/home.scss" rel="stylesheet">
+{% endblock %}
+
+{% block scripts %}
+<!-- load specific page script -->
+<script src="@scripts/home.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<section id="banner">
+  <div class="home-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide banner">
+        <div class="container">
+          <div class="banner__image">
+            <img src="@images/home/banner-1.jpg" alt="">
+          </div>
+          <h2 class="banner__title">Производство электротехнического оборудования в Казахстане</h2>
+          <h4 class="banner__subtitle">Трансформаторы</h4>
+          <div class="banner__btns">
+            <button class="btn btn--link">Подробнее</button>
+            <button class="btn btn--medium btn--primary">Заказать</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide banner">
+        <div class="container">
+          <div class="banner__image">
+            <img src="@images/home/banner-1.jpg" alt="">
+          </div>
+          <h2 class="banner__title">Производство электротехнического оборудования в Казахстане</h2>
+          <h4 class="banner__subtitle">Трансформаторы</h4>
+          <div class="banner__btns">
+            <button class="btn btn--link">Подробнее</button>
+            <button class="btn btn--medium btn--primary">Заказать</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide banner">
+        <div class="container">
+          <div class="banner__image">
+            <img src="@images/home/banner-1.jpg" alt="">
+          </div>
+          <h2 class="banner__title">Производство электротехнического оборудования в Казахстане</h2>
+          <h4 class="banner__subtitle">Трансформаторы</h4>
+          <div class="banner__btns">
+            <button class="btn btn--link">Подробнее</button>
+            <button class="btn btn--medium btn--primary">Заказать</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-swiper__control">
+      <div class="container">
+        <button class="btn btn--icon btn--white home-swiper__btn-prev">
+          <img src="@images/icons/btn-arrow-line.svg" alt="">
+        </button>
+        <button class="btn btn--icon btn--primary home-swiper__btn-next">
+          <img src="@images/icons/btn-arrow-line.svg" alt="">
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="advantage">
+  <div class="container ">
+    <div class="advantages">
+      <div class="advantages__inner">
+        <div class="advantages__item">
+          <div class="advantages__img">
+            <img src="@images/icons/like.svg" alt="">
+          </div>
+          <div class="advantages__text">Качество проверенное с 1959 года</div>
+        </div>
+        <div class="advantages__item">
+          <div class="advantages__img">
+            <img src="@images/icons/graphic-arrow.svg" alt="">
+          </div>
+          <div class="advantages__text">Гарантия до 5 лет</div>
+        </div>
+        <div class="advantages__item">
+          <div class="advantages__img">
+            <img src="@images/icons/key.svg" alt="">
+          </div>
+          <div class="advantages__text">Комплексные решения под ключ</div>
+        </div>
+        <div class="advantages__item">
+          <div class="advantages__img">
+            <img src="@images/icons/setting.svg" alt="">
+          </div>
+          <div class="advantages__text">Наличие большого количества комплектующих</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="section-title services__title">
+          <div class="section-title__line"></div>
+          <div class="section-title__content">Предоставляемые услуги</div>
+        </div>
+        <p class="services__text">Завод не только производит оборудование, но также предлагает услуги по шеф-монтажу,
+          а также в последующем обслуживанию оборудования.</p>
+      </div>
+    </div>
+    <div class="row service-list">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="service">
+          <div class="service__img">
+            <img src="@images/home/service-1.jpg" alt="">
+          </div>
+          <div class="service__name">Проектирование</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="service">
+          <div class="service__img">
+            <img src="@images/home/service-2.jpg" alt="">
+          </div>
+          <div class="service__name">Электромонтаж</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="service">
+          <div class="service__img">
+            <img src="@images/home/service-3.jpg" alt="">
+          </div>
+          <div class="service__name">Обслуживание оборудования</div>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-stretch devices">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="device">
+          <div class="device__title">Высоковольтное <br> оборудование</div>
+          <div class="device__img">
+            <div class="device__img-wrap">
+              <img src="@images/home/device-1.png" alt="">
+            </div>
+            <a href="/" class="btn btn--icon btn--icon-small device__link">
+              <img src="@images/icons/btn-arrow-line.svg" alt="">
+            </a>
+          </div>
+          <div class="device__text">Мы предлагаем полный ассортимент высоковольтного оборудования . А именно комплектные
+            распределительные устройства, комплектные трансформаторные подстанции, трансформаторы различных серий
+            учитывая индивидуальные особенности отдельных проектов.</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="device">
+          <div class="device__title">Трансформаторы</div>
+          <div class="device__img">
+            <div class="device__img-wrap">
+              <img src="@images/home/device-2.png" alt="">
+            </div>
+            <a href="/" class="btn btn--icon btn--icon-small device__link">
+              <img src="@images/icons/btn-arrow-line.svg" alt="">
+            </a>
+          </div>
+          <div class="device__text">Вам необходим трансформатор, который будет удовлетворять вашим требованиям. Мы
+            предлагаем широкий спектр трансформаторов для решения любых задач – от компактных распределительных
+            трансформаторов до трансформаторов высокой мощности.</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="device">
+          <div class="device__title">Коммутационные <br> устройства</div>
+          <div class="device__img">
+            <div class="device__img-wrap">
+              <img src="@images/home/device-3.png" alt="">
+            </div>
+            <a href="/" class="btn btn--icon btn--icon-small device__link">
+              <img src="@images/icons/btn-arrow-line.svg" alt="">
+            </a>
+          </div>
+          <div class="device__text">Мы предлагаем полный ассортимент низковольтного оборудования – низковольтные
+            комплектные распределительные устройства ,Вводно-распределительные устройства ,ящики и шкафы управление и
+            многое другое специального назначения.</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="device">
+          <div class="device__title">Низковольтное <br> оборудование</div>
+          <div class="device__img">
+            <div class="device__img-wrap">
+              <img src="@images/home/device-4.png" alt="">
+            </div>
+            <a href="/" class="btn btn--icon btn--icon-small device__link">
+              <img src="@images/icons/btn-arrow-line.svg" alt="">
+            </a>
+          </div>
+          <div class="device__text">Мы предлагаем полный ассортимент низковольтного оборудования – низковольтные
+            комплектные распределительные устройства ,Вводно-распределительные устройства ,ящики и шкафы управление и
+            многое другое специального назначения.</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="device device--bg">
+          <img src="@images/home/device-5.jpg" alt="" class="device__bg-img">
+          <div class="device__title">Комплектно <br> трансформаторные подстанции</div>
+          <div class="device__text">Трансформаторная подстанция является ключевым элементом системы энергоснабжения
+            предприятия или жилого комплекса. Мы предлагаем к продаже комплектные трансформаторные подстанции различных
+            видов с индивидуальным подходом.</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="device">
+          <div class="device__title">Коммутационные <br> устройства</div>
+          <div class="device__img">
+            <div class="device__img-wrap">
+              <img src="@images/home/device-6.png" alt="">
+            </div>
+            <a href="/" class="btn btn--icon btn--icon-small device__link">
+              <img src="@images/icons/btn-arrow-line.svg" alt="">
+            </a>
+          </div>
+          <div class="device__text">Устройства и оборудование включения — отключения, управления электрических цепей
+            называются коммутационными. Применяются они повсеместно, в бытовой или промышленной электросети - это
+            выключатели, рубильники, УЗО, дифавтоматы, предохранители.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="section-title section-title--light products__title">
+          <div class="section-title__line"></div>
+          <div class="section-title__content">Наши товары</div>
+          <a href="/" class="btn btn--link products__more">
+            <span>Смотреть каталог</span>
+            <img src="@images/icons/btn-arrow-line.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="products-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="product">
+                <button class="btn btn--small product__btn">Под заказ</button>
+                <div class="product__img">
+                  <img src="@images/home/device-list-1.png" alt="">
+                </div>
+                <div class="product__title">Комплектное распределительное устройство серии КМ-7М, К-7М</div>
+                <div class="product__subtitle">Высоковольтное оборудование</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <button class="btn btn--small product__btn">Под заказ</button>
+                <div class="product__img">
+                  <img src="@images/home/device-list-2.png" alt="">
+                </div>
+                <div class="product__title">Комплектное распределительное устройство серии KERNEU 10кВ, 27,5кВ, 35кВ
+                </div>
+                <div class="product__subtitle">Высоковольтное оборудование</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <button class="btn btn--small product__btn">Под заказ</button>
+                <div class="product__img">
+                  <img src="@images/home/device-list-3.png" alt="">
+                </div>
+                <div class="product__title">Комплектное распределительное устройство серии КРУ2-10</div>
+                <div class="product__subtitle">Высоковольтное оборудование</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <button class="btn btn--small product__btn">Под заказ</button>
+                <div class="product__img">
+                  <img src="@images/home/device-list-4.png" alt="">
+                </div>
+                <div class="product__title">Комплектное распределительное устройство серии К-XXVI</div>
+                <div class="product__subtitle">Высоковольтное оборудование</div>
+              </div>
+            </div>
+            
+            <div class="swiper-slide">
+              <div class="product">
+                <button class="btn btn--small product__btn">Под заказ</button>
+                <div class="product__img">
+                  <img src="@images/home/device-list-1.png" alt="">
+                </div>
+                <div class="product__title">Комплектное распределительное устройство серии КМ-7М, К-7М</div>
+                <div class="product__subtitle">Высоковольтное оборудование</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <button class="btn btn--small product__btn">Под заказ</button>
+                <div class="product__img">
+                  <img src="@images/home/device-list-2.png" alt="">
+                </div>
+                <div class="product__title">Комплектное распределительное устройство серии KERNEU 10кВ, 27,5кВ, 35кВ
+                </div>
+                <div class="product__subtitle">Высоковольтное оборудование</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <button class="btn btn--small product__btn">Под заказ</button>
+                <div class="product__img">
+                  <img src="@images/home/device-list-3.png" alt="">
+                </div>
+                <div class="product__title">Комплектное распределительное устройство серии КРУ2-10</div>
+                <div class="product__subtitle">Высоковольтное оборудование</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <button class="btn btn--small product__btn">Под заказ</button>
+                <div class="product__img">
+                  <img src="@images/home/device-list-4.png" alt="">
+                </div>
+                <div class="product__title">Комплектное распределительное устройство серии К-XXVI</div>
+                <div class="product__subtitle">Высоковольтное оборудование</div>
+              </div>
+            </div>
+            
+            <div class="swiper-slide">
+              <div class="product">
+                <button class="btn btn--small product__btn">Под заказ</button>
+                <div class="product__img">
+                  <img src="@images/home/device-list-1.png" alt="">
+                </div>
+                <div class="product__title">Комплектное распределительное устройство серии КМ-7М, К-7М</div>
+                <div class="product__subtitle">Высоковольтное оборудование</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <button class="btn btn--small product__btn">Под заказ</button>
+                <div class="product__img">
+                  <img src="@images/home/device-list-2.png" alt="">
+                </div>
+                <div class="product__title">Комплектное распределительное устройство серии KERNEU 10кВ, 27,5кВ, 35кВ
+                </div>
+                <div class="product__subtitle">Высоковольтное оборудование</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <button class="btn btn--small product__btn">Под заказ</button>
+                <div class="product__img">
+                  <img src="@images/home/device-list-3.png" alt="">
+                </div>
+                <div class="product__title">Комплектное распределительное устройство серии КРУ2-10</div>
+                <div class="product__subtitle">Высоковольтное оборудование</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <button class="btn btn--small product__btn">Под заказ</button>
+                <div class="product__img">
+                  <img src="@images/home/device-list-4.png" alt="">
+                </div>
+                <div class="product__title">Комплектное распределительное устройство серии К-XXVI</div>
+                <div class="product__subtitle">Высоковольтное оборудование</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="products-swiper__control">
+            <button class="btn btn--icon btn--icon-small products-swiper__btn-prev">
+              <img src="@images/icons/btn-arrow-line.svg" alt="">
+            </button>
+            <button class="btn btn--icon btn--icon-small products-swiper__btn-next">
+              <img src="@images/icons/btn-arrow-line.svg" alt="">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="consulting">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="consulting">
+          <div class="consulting__content">
+            <div class="consulting__title">Консультация по товарам</div>
+            <div class="consulting__text">Менеджеры компании с радостью ответят на ваши вопросы и произведут расчет стоимости товаров и подготовят индивидуальное коммерческое предложение.</div>
+          </div>
+          <a href="" class="btn btn--medium btn--primary consulting__btn">Задать вопрос</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="company">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-7 col-xl-8">
+        <div class="about-company">
+          <div class="section-title section-title--small about-company__title">
+            <div class="section-title__line"></div>
+            <div class="section-title__content">О компании</div>
+          </div>
+          <div class="about-company__text">
+            <p>ТОО «АЭМЗ» – один из крупнейших в Республике Казахстан производитель комплектных распределительных устройств (КРУ) внутренней и наружной установки, комплектных трансформаторных подстанций (КТП) для различных отраслей промышленности и систем энергоснабжения, а также стандартных и нестандартных распределительных шкафных конструкций.</p>
+            <p>Основным направлением деятельности предприятия является выпуск широкого спектра:</p>
+            <ul>
+              <li>• высоковольтного оборудования</li>
+              <li>• низковольтного оборудования</li>
+              <li>• нестандартного электротехнического оборудования</li>
+              <li>• комплектно-трансформаторных подстанций</li>
+              <li>• «АЭМЗ» также выполняет проектные, монтажные и пусконаладочные работы поставляемого оборудования с последующим сервисным и гарантийным обслуживанием.</li>
+            </ul>
+            <p>Продукция завода разрабатывается на основе применения новых технологий и изготавливается на оборудовании с цифровым программным обеспечением.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-5 col-xl-4">
+        <div class="news-list">
+          <div class="news">
+            <div class="news__img">
+              <img src="@images/home/news-1.jpg" alt="">
+            </div>
+            <div class="news__content">
+              <div class="news__title">50 самых влиятельных бизнесменов Казахстана</div>
+              <a href="" class="btn btn--link news__more">
+                <span>Подробнее</span>
+                <img src="@images/icons/btn-arrow-line.svg" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="news">
+            <div class="news__img">
+              <img src="@images/home/news-2.jpg" alt="">
+            </div>
+            <div class="news__content">
+              <div class="news__title">Президент выдвинул инициативы, позволяющие увеличить экспорт отечественной продукции – эксперт о Послании</div>
+              <a href="" class="btn btn--link news__more">
+                <span>Подробнее</span>
+                <img src="@images/icons/btn-arrow-line.svg" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="news">
+            <div class="news__img">
+              <img src="@images/home/news-3.jpg" alt="">
+            </div>
+            <div class="news__content">
+              <div class="news__title">Лучший товар года 2018</div>
+              <a href="" class="btn btn--link news__more">
+                <span>Подробнее</span>
+                <img src="@images/icons/btn-arrow-line.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="logos">
+  <div class="container">
+    <div class="row">
+      <div class="col logos">
+        <a href=""><img src="@images/home/logos-1.png" alt=""></a>
+        <a href=""><img src="@images/home/logos-2.png" alt=""></a>
+        <a href=""><img src="@images/home/logos-3.png" alt=""></a>
+        <a href=""><img src="@images/home/logos-4.png" alt=""></a>
+        <a href=""><img src="@images/home/logos-5.png" alt=""></a>
+        <a href=""><img src="@images/home/logos-6.png" alt=""></a>
+        <a href=""><img src="@images/home/logos-7.png" alt=""></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

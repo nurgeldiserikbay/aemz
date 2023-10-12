@@ -1,0 +1,235 @@
+@use '../abstracts/variables' as var;
+@use '../base/mixins' as mixin;
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  @include mixin.laptop { max-width: 1260px; }
+  @include mixin.wide-laptop { max-width: 1380px; }
+  @include mixin.wide-screen { max-width: 1620px; }
+}
+
+.btn {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var.$font-family;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var.$text-color-white;
+  text-align: center;
+  box-sizing: border-box;
+  transition: 0.3s linear;
+  
+  @include mixin.small-tablet { font-size: 1.7rem; }
+  @include mixin.wide-tablet { font-size: 1.8rem; }
+  @include mixin.laptop { font-size: 1.9rem; }
+  @include mixin.wide-screen { font-size: 2rem; }
+
+  &--small {
+    font-size: 1.6rem;
+    padding: 0.4rem 1.6rem;
+
+    @include mixin.tablet { padding: 0.5rem 2rem; }
+    @include mixin.small-laptop { padding: 0.6rem 2.3rem; }
+    @include mixin.wide-laptop { padding: 0.7rem 2.6rem; }
+  }
+
+  &--medium {
+    padding: 0.7rem 2rem;
+
+    @include mixin.tablet { padding: 0.95rem 2.9rem; }
+    @include mixin.small-laptop { padding: 1.25rem 3.9rem; }
+    @include mixin.wide-laptop { padding: 1.5rem 4.9rem; }
+  }
+
+  &--link {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+
+    @include mixin.tablet { padding-top: 0.95rem; padding-bottom: 0.95rem; }
+    @include mixin.small-laptop { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+    @include mixin.wide-laptop { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+  }
+
+  &--icon {
+    height: 3.4rem;
+    width: 3.4rem;
+
+    @include mixin.tablet { height: 4.2rem; width: 4.2rem; }
+    @include mixin.small-laptop { height: 4.9rem; width: 4.9rem; }
+    @include mixin.wide-laptop { height: 5.6rem; width: 5.6rem; }
+  }
+
+  &--icon-small {
+    height: 3rem;
+    width: 3rem;
+
+    @include mixin.tablet { height: 3.3rem; width: 3.3rem; }
+    @include mixin.small-laptop { height: 3.6rem; width: 3.6rem; }
+    @include mixin.wide-laptop { height: 3.9rem; width: 3.9rem; }
+  }
+
+  &--primary {
+    background: var.$color-primary;
+  }
+
+  &--white {
+    background: var.$color-white;
+  }
+}
+
+.banner {
+  position: relative;
+  padding-top: 10rem;
+  padding-bottom: 10.3rem;
+
+  @include mixin.tablet { padding-top: 10.1rem; padding-bottom: 10.3rem; }
+  @include mixin.wide-tablet { padding-top: 13.1rem; padding-bottom: 12.3rem; }
+  @include mixin.small-laptop { padding-top: 16.1rem; padding-bottom: 14.3rem; }
+  @include mixin.laptop { padding-top: 19.1rem; padding-bottom: 16.3rem; }
+  @include mixin.wide-laptop { padding-top: 22.1rem; padding-bottom: 18.3rem; }
+  @include mixin.wide-screen { padding-top: 25.1rem; padding-bottom: 20.3rem; }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(var.$banner-overlay, 0.66);
+    }
+  }
+
+  &__title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var.$text-color-white;
+    max-width: 113.3rem;
+    margin-bottom: 2rem;
+
+    @include mixin.small-tablet { font-size: 2.8rem; margin-bottom: 3rem; }
+    @include mixin.tablet { font-size: 3.5rem; margin-bottom: 4.5rem; }
+    @include mixin.wide-tablet { font-size: 4.2rem; margin-bottom: 6rem; }
+    @include mixin.small-laptop { font-size: 4.9rem; margin-bottom: 7.5rem; }
+    @include mixin.laptop { font-size: 5.6rem; margin-bottom: 9rem; }
+    @include mixin.wide-laptop { font-size: 6.3rem; margin-bottom: 10rem; }
+    @include mixin.wide-screen { font-size: 7rem; margin-bottom: 11rem; }
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var.$text-color-white;
+    margin-bottom: 1.5rem;
+
+    @include mixin.small-tablet { font-size: 2.3rem; margin-bottom: 2rem; }
+    @include mixin.tablet { font-size: 2.5rem; margin-bottom: 2.7rem; }
+    @include mixin.wide-tablet { font-size: 2.7rem; margin-bottom: 3.4rem; }
+    @include mixin.small-laptop { font-size: 2.9rem; margin-bottom: 4.1rem; }
+    @include mixin.laptop { font-size: 3.1rem; margin-bottom: 4.8rem; }
+    @include mixin.wide-laptop { font-size: 3.3rem; margin-bottom: 5.5rem; }
+    @include mixin.wide-screen { font-size: 3.5rem; margin-bottom: 6.2rem; }
+  }
+
+  &__btns {
+    position: relative;
+    z-index: 10;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+
+    @include mixin.small-tablet { gap: 2.5rem; }
+    @include mixin.tablet { gap: 2.9rem; }
+    @include mixin.wide-tablet { gap: 3.3rem; }
+    @include mixin.small-laptop { gap: 3.7rem; }
+    @include mixin.laptop { gap: 4.1rem; }
+    @include mixin.wide-laptop { gap: 4.5rem; }
+    @include mixin.wide-screen { gap: 4.9rem; }
+  }
+}
+
+.section-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+
+  @include mixin.small-laptop { gap: 3rem; }
+  @include mixin.wide-screen { gap: 4rem; }
+
+  &__line {
+    width: 5rem;
+    height: 1px;
+    background: var.$line-dark;
+
+    @include mixin.tablet { width: 13rem; }
+    @include mixin.laptop { width: 21.8rem; }
+  }
+
+  &--light &__line {
+    background: var.$line-white;
+  }
+
+  &__content {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var.$text-color-black;
+
+    @include mixin.small-tablet { font-size: 2.4rem; }
+    @include mixin.tablet { font-size: 2.8rem; }
+    @include mixin.wide-tablet { font-size: 3.2rem; }
+    @include mixin.small-laptop { font-size: 3.6rem; }
+    @include mixin.laptop { font-size: 4rem; }
+    @include mixin.wide-laptop { font-size: 4.4rem; }
+    @include mixin.wide-screen { font-size: 4.8rem; }
+  }
+
+  &--light &__content {
+    color: var.$text-color-white;
+  }
+
+  &--small &__content {
+    font-size: 1.8rem;
+
+    @include mixin.small-tablet { font-size: 2rem; }
+    @include mixin.tablet { font-size: 2.2rem; }
+    @include mixin.wide-tablet { font-size: 2.35rem; }
+    @include mixin.small-laptop { font-size: 2.5rem; }
+    @include mixin.laptop { font-size: 2.75rem; }
+    @include mixin.wide-laptop { font-size: 2.9rem; }
+    @include mixin.wide-screen { font-size: 3rem; }
+  }
+}

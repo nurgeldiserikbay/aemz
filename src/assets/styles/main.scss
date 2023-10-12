@@ -1,0 +1,22 @@
+@use 'base/mixins';
+
+// Base
+@use 'base/normalize';
+@use 'base/layout';
+
+// App font: load your font
+@use 'base/fonts/ttnormspro' as font;
+@use 'base/fonts/montserrat' as font2;
+
+@use 'base/typography' with (
+  $font-family: font.$font-family ,
+  $font-family2: font2.$font-family,
+);
+
+// animations
+@use 'base/_animations';
+
+// Page layout: header, main, footer
+@use 'pages/default-layout';
+
+@import '@styles/base/bootstrap-grid.min.css'
