@@ -31,18 +31,20 @@ export function adaptiveSwiper(opt, sizes) {
   let initedSize;
 
   const init = () => {
-    const windowSize = getWindowSize()
+    setTimeout(() => {
+      const windowSize = getWindowSize()
 
-    if (windowSize === initedSize) return
+      if (windowSize === initedSize) return
 
-    initedSize = windowSize
+      initedSize = windowSize
 
-    swiperInit({
-      ...opt,
-      perView: sizes[initedSize]?.perView || opt.perView || 2,
-    })
+      swiperInit({
+        ...opt,
+        perView: sizes[initedSize]?.perView || opt.perView || 2,
+      })
+    }, 200)
   }
-  
+
   init()
 
   window.addEventListener('resize', init)
