@@ -385,6 +385,12 @@
 
   .swiper-slide {
     height: 100%;
+    opacity: 0;
+    transition: opacity 0.1s linear;
+  }
+  
+  .swiper-slide-active {
+    opacity: 1;
   }
 
   &__control {

@@ -1,6 +1,13 @@
 @use '../abstracts/variables' as var;
 @use '../base/mixins' as mixin;
 
+header,
+main,
+footer {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 .header {
   position: absolute;
   top: 0;

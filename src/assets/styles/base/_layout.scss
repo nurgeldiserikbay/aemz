@@ -8,6 +8,10 @@ ul {
 }
 
 .container {
+  &--hidden {
+    overflow-x: hidden;
+  }
+
   @include mixin.laptop { max-width: 1260px; }
   @include mixin.wide-laptop { max-width: 1380px; }
   @include mixin.wide-screen { max-width: 1620px; }
