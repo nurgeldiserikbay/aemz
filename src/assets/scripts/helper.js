@@ -8,7 +8,7 @@ export function swiperInit({ className, perView, spaceBetween, nextBtnClass, pre
   let slidesPerView = perView || (sizes && sizes[wSize]?.perView) || 1
   const space = spaceBetween
 
-  let swiper = getSwiper()
+  getSwiper()
 
   function getSwiper() {
     let swiper = new Swiper(className, {
